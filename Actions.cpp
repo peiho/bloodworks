@@ -70,6 +70,27 @@ namespace glpipe
 		BLOCK_PARAM
 	};
 
+	void VertexBuffer::parse(FILE* f)
+	{
+		int para(0);
+		std::string line;
+		std::string token;
+		int line_counter(0);
+		int char_counter(0);
+		while (para >= 0 && !feof(f))
+		{
+			char c;
+			line.clear();
+			line_counter++;
+			char_counter = 0;
+			do
+			{
+				fread(&c, 1, 1, f);
+				line.push_back(c);
+			} while (c != '\n');
+		}
+	}
+
 	void Render::parse(FILE* f)
 	{
 		int para(0);
@@ -110,22 +131,23 @@ namespace glpipe
 					{
 						if (token.compare("param")==0) 
 							blocktype = BLOCK_PARAM;
-						else if (token.compare("vertex")==0 &&
-								blocktype != BLOCK_PROGRAM)
+
+						else if (token.compare("vertex")==0)
 							blocktype = BLOCK_VERTEX;
+
 						else if (token.compare("buffer")==0 && 
 								(blocktype == BLOCK_VERTEX))
 							blocktype = BLOCK_VERTEX_BUFFER;
+
 						else if (token.compare("array")==0 && 
 								(blocktype == BLOCK_VERTEX))
 							blocktype = BLOCK_VERTEX_ARRAY;
-						else if (token.compare("program")==0)
-							blocktype = BLOCK_PROGRAM;
-						else if (token.compare("vertex")&& 
-								blocktype == BLOCK_PROGRAM)
-								blocktype = BLOCK_PROGRAM_VERTEX;
-						else if (token.compare("fragment")&& 
-								blocktype == BLOCK_PROGRAM)
+
+						else if (token.compare("program")==0 &&
+								(blocktype == BLOCK_VERTEX))
+							blocktype = BLOCK_PROGRAM_VERTEX;
+
+						else if (token.compare("fragment"))
 								blocktype = BLOCK_PROGRAM_FRAGMENT;
 
 					}
@@ -141,6 +163,10 @@ namespace glpipe
 						{
 							switch (blocktype)
 							{
+							case BLOCK_PROGRAM_VERTEX:
+								this->vert.parse(f);
+							case BLOCK_PROGRAM_FRAGMENT:
+								this->frag.parse(f);
 							default: case NONE:
 								para++; break;
 							}

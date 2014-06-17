@@ -17,7 +17,7 @@ namespace glpipe
 	public:
 		void getId();
 		void analizeShaderCode();
-		virtual void parse(FILE* f);
+		virtual void parse(FILE* f); //override
 	};
 
 	class FragmentShader : public Shader
@@ -32,14 +32,15 @@ namespace glpipe
 		//virtual void exec();
 	};
 
+	class VertexBuffer : public Action
+	{
+	public:
+		virtual void parse(FILE* f); //override
+	};
+
 	class Program : public Action
 	{
 		
-	};
-
-	class VertexBuffer
-	{
-
 	};
 
 	class VertexArray
