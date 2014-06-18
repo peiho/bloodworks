@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mOpenGL", "mOpenGL\mOpenGL.vcxproj", "{861E0086-8FAA-4C78-89DB-96AC214C5D07}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "glpipe", "glpipe\glpipe.vcxproj", "{7F2EADE9-9DBB-4E35-92B3-9971DEFB871D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cmOpenGL", "cmOpenGL\cmOpenGL.vcxproj", "{1BF21B63-6E22-44FF-BA3D-67BC80A97E1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{861E0086-8FAA-4C78-89DB-96AC214C5D07}.Debug|Win32.ActiveCfg = Debug|Win32
+		{861E0086-8FAA-4C78-89DB-96AC214C5D07}.Debug|Win32.Build.0 = Debug|Win32
+		{861E0086-8FAA-4C78-89DB-96AC214C5D07}.Release|Win32.ActiveCfg = Release|Win32
+		{861E0086-8FAA-4C78-89DB-96AC214C5D07}.Release|Win32.Build.0 = Release|Win32
+		{7F2EADE9-9DBB-4E35-92B3-9971DEFB871D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7F2EADE9-9DBB-4E35-92B3-9971DEFB871D}.Debug|Win32.Build.0 = Debug|Win32
+		{7F2EADE9-9DBB-4E35-92B3-9971DEFB871D}.Release|Win32.ActiveCfg = Release|Win32
+		{7F2EADE9-9DBB-4E35-92B3-9971DEFB871D}.Release|Win32.Build.0 = Release|Win32
+		{1BF21B63-6E22-44FF-BA3D-67BC80A97E1D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1BF21B63-6E22-44FF-BA3D-67BC80A97E1D}.Debug|Win32.Build.0 = Debug|Win32
+		{1BF21B63-6E22-44FF-BA3D-67BC80A97E1D}.Release|Win32.ActiveCfg = Release|Win32
+		{1BF21B63-6E22-44FF-BA3D-67BC80A97E1D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

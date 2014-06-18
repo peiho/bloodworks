@@ -1,0 +1,33 @@
+
+program
+{
+	vertex
+	{
+		#version 150
+
+		in vec2 position;
+		out vec3 pos;
+
+		uniform float time;
+
+		void main()
+		{
+			vec2 newpos = position*mat2(cos(time),sin(time),-sin(time),cos(time))/(1.0+sin(time+position.x+position.y)*.5);
+			pos = vec3(position.xy,(1.0+sin(time+position.x+position.y)*.5));
+			gl_Position = vec4(newpos, 0.0, 1.0);
+		} 
+	}
+	fragment
+	{
+		#version 150
+
+		in vec3 pos;
+		out vec4 outColor;
+
+		void main()
+		{
+			vec3 p = pos*sin(pos*7.0).yzx*2.0;
+			outColor = vec4(1.0*fract(p.x*4.01), 1.0*fract(p.y*4.01), 1.0*fract(p.z*20.01), 1.0);
+		}
+	}
+}
