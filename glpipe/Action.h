@@ -1,8 +1,8 @@
 #pragma once
 
 #include <vector>
+#include "Lexer.h"
 #include "Filestate.h"
-#include "Parser.h"
 
 namespace glpipe
 {	
@@ -16,7 +16,7 @@ namespace glpipe
 
 		virtual void sync();
 
-		virtual void parse(FILE* f);
+		virtual void parse(Lexer* f);
 		virtual void prepare();
 		virtual void exec();
 	};

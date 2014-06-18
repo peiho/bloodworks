@@ -1,4 +1,3 @@
-#include "Parser.h"
 #include "Filestate.h"
 #include "Actions.h"
 #include "Lexer.h"
@@ -53,7 +52,7 @@ void test04()
 
 int main()
 {
-	test04();
+	test03();
 	//Action *a = parse(stdin);
 	//delete a;
 	//return 0;

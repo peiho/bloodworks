@@ -81,7 +81,6 @@
     <ClInclude Include="Actions.h" />
     <ClInclude Include="Filestate.h" />
     <ClInclude Include="Lexer.h" />
-    <ClInclude Include="Parser.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Action.cpp" />

@@ -22,6 +22,31 @@ inline bool issep(char c)
 	}
 }
 
+const char* Lexer::nextBlock(){
+  buffer.clear();
+  int para = 0;
+  while(!stream.end)
+  {
+    char c = stream.pop();
+    if (c == '{') para ++;
+    if (c == '}') 
+    {
+      para --;
+      if (para < 0)
+      {
+        stream.push(c);
+        break;
+      }
+    }
+    buffer.push_back(c);
+  }
+  
+	if (buffer.size())
+		return buffer.c_str();
+	else
+		return NULL;
+}
+
 const char* Lexer::next(){
 
 restart: 

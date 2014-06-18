@@ -20,7 +20,8 @@ namespace glpipe
 		{
 			if (this->isFilestate())
 			{
-				parse(openStream());
+        Lexer lexer(openStream());
+				parse(&lexer);
 				closeStream();
 				FilestateUpdate();
 			}
@@ -31,7 +32,7 @@ namespace glpipe
 		}
 	};
 
-	void Action::parse(FILE* f)
+	void Action::parse(Lexer* f)
 	{
 		throw "shouln't be called";
 	}

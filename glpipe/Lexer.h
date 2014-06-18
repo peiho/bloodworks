@@ -3,7 +3,7 @@
 #include <string>
 #include <cstdlib>
 
-class StreamQueue
+class CharStream
 {
 	char read_buffer[96];
 	char* read_head;
@@ -45,7 +45,7 @@ public:
 		*read_head = c;
 	}
 
-	inline StreamQueue(std::FILE* stream)
+	inline CharStream(std::FILE* stream)
 	{
 		this->stream = stream;
 		count = 0;
@@ -58,11 +58,12 @@ class Lexer
 public:
 	Lexer(std::FILE* stream);
 	const char* next();
+  const char* nextBlock();
 	int getLine();
 	int getPosition();
 
 private:
-	StreamQueue stream;
+	CharStream stream;
 	std::string buffer;
 	int line, position;
 	bool commentLine, comment;
